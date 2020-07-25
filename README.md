@@ -1,6 +1,6 @@
 ### Philip's latest adventure!
 
-Pupose: I need more hands on k8s experience, so I'm going to work on this in my free time. I'm going to keep building
+Purpose: I need more hands on k8s experience, so I'm going to work on this in my free time. I'm going to keep building
 more and more complex k8s configurations. Instead of muddying the water too much, I'm going to make sure that this repo
 revolves around k8s configurations, instead of pulling in other technologies just for the fun of it like I 
 initially planned.
@@ -33,4 +33,5 @@ mvn clean install
 Thanks to:
 
 https://spring.io/guides/gs/spring-boot-docker/
+https://kubernetes.io/docs/setup/learning-environment/minikube/
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
