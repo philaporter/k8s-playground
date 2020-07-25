@@ -5,17 +5,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
 @SpringBootApplication
 @RestController
 public class Application {
 
-	@RequestMapping("/")
-	public String home() {
-		System.out.println("Avatar was a good cartoon");
-		return "Energy bending is crazy";
-	}
+  Logger logger = Logger.getLogger("com.philaporter.Application");
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+  @RequestMapping("/health/ready")
+  public void ready() {
+    logger.info("/health/ready was successful");
+  }
+
+  @RequestMapping("/health")
+  public void health() {
+    logger.info("/health check was successful");
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 }
