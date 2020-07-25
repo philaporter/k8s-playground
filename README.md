@@ -12,7 +12,7 @@ spin up in k8s using minikube.
 
 - [x] Configure a deployment configuration that defines the sample application with the liveliness and readiness probes.
 
-- [ ] Create a db dependency in the sample application that will give me the opportunity to set up some db cluster in 
+- [ ] Create a db dependency in the sample application that will give me the opportunity to set up a db cluster in 
 k8s.
 
 - [ ] Configure multi-container deployments. 
@@ -33,5 +33,7 @@ mvn clean install
 Thanks to:
 
 https://spring.io/guides/gs/spring-boot-docker/
+
 https://kubernetes.io/docs/setup/learning-environment/minikube/
+
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
