@@ -9,13 +9,15 @@
 # Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the
 # environment variables for the current shell session.
 
+# In order to create the base yml to modify, do the following:
 # kubectl create deployment first-k8s-deploy --image="sample" -o yaml --dry-run > sample.yml
-# then I manually edited sample.yml to have the updated imagePullPolicy
+# then manually edit sample.yml to have the updated imagePullPolicy
 
 echo "create deployment for the spring sample"
 eval $(minikube docker-env)
 docker build -t sample ../spring-sample/.
-kubectl create deployment sample --image=sample:latest
+kubectl apply -f sample.yml
+sleep 3
 kubectl get pods
 
 # kubectl delete deployment first-k8s-deploy
