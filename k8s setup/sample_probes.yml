@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first-k8s-deploy
+  name: first-k8s-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-k8s-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first-k8s-deploy
+    spec:
+      containers:
+        - image: "sample"
+          name: "sample"
+          resources: {}
+          imagePullPolicy: Never
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 8080
+status: {}

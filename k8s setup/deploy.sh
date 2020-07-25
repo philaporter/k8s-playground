@@ -18,6 +18,6 @@ eval $(minikube docker-env)
 docker build -t sample ../spring-sample/.
 kubectl apply -f sample.yml
 sleep 3
-kubectl get pods
+kubectl get all
 
 # kubectl delete deployment first-k8s-deploy

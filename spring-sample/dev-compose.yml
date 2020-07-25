@@ -1,6 +1,9 @@
-version: '3.0'
+version: '3.7'
 services:
   sample:
     build: .
     ports:
       - "8080:8080"
+
+
+# for trying aerospike later https://www.aerospike.com/docs/deploy_guides/docker/orchestrate/index.html
