@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first-k8s-deploy
+  name: first-k8s-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-k8s-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first-k8s-deploy
+    spec:
+      containers:
+        - image: "sample"
+          name: "sample"
+          resources: {}
+          imagePullPolicy: Never
+        - image: "envoy"
+          name: "envoy"
+          resources: {}
+          imagePullPolicy: Never
+### This isn't working correctly. Need to debug why. I exec into the container and see the envoy config where it should be...
+#          livenessProbe:
+#            httpGet:
+#              path: /health
+#              port: 10000
+#            initialDelaySeconds: 3
+#            periodSeconds: 3
+#          readinessProbe:
+#            httpGet:
+#              path: /health/ready
+#              port: 10000
+status: {}
