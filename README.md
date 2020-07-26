@@ -12,10 +12,12 @@ spin up in k8s using minikube.
 
 - [x] Configure a deployment configuration that defines the sample application with the liveliness and readiness probes.
 
+- [x] Configure multi-container deployments. 
+
+- [ ] Configure non default container resources.
+
 - [ ] Create a db dependency in the sample application that will give me the opportunity to set up a db cluster in 
 k8s.
-
-- [x] Configure multi-container deployments. 
 
 ### Running something
 
