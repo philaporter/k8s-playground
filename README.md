@@ -15,7 +15,7 @@ spin up in k8s using minikube.
 - [ ] Create a db dependency in the sample application that will give me the opportunity to set up a db cluster in 
 k8s.
 
-- [ ] Configure multi-container deployments. 
+- [x] Configure multi-container deployments. 
 
 ### Running something
 
