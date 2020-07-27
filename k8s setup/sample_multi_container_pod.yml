@@ -22,19 +22,18 @@ spec:
           name: "sample"
           resources: {}
           imagePullPolicy: Never
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 10000
         - image: "envoy"
           name: "envoy"
           resources: {}
           imagePullPolicy: Never
-### This isn't working correctly. Need to debug why. I exec into the container and see the envoy config where it should be...
-#          livenessProbe:
-#            httpGet:
-#              path: /health
-#              port: 10000
-#            initialDelaySeconds: 3
-#            periodSeconds: 3
-#          readinessProbe:
-#            httpGet:
-#              path: /health/ready
-#              port: 10000
 status: {}
