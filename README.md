@@ -16,7 +16,7 @@ spin up in k8s using minikube.
 
 - [x] Configure traffic to come through envoy with envoy health checks.
 
-- [ ] Configure non default container resources.
+- [x] Configure non default container resources.
 
 - [ ] Create a db dependency in the sample application that will give me the opportunity to set up a db cluster in 
 k8s.
@@ -27,8 +27,12 @@ k8s.
 # Deploying the app in k8s 
 cd k8s\ setup/
 ./deploy.sh
+# Get pods
+kubectl get pods
 # If you want to hit the endpoints through your browser
 kubectl port-forward <pod name> 10000:10000
+# Check out your pod - maybe to validate custom pod sizing
+kubectl describe pod <pod name>
 
 # Building / running the app in docker-compose
 cd spring-sample
