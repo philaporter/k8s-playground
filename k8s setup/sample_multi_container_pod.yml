@@ -28,10 +28,11 @@ spec:
               port: 8080
             initialDelaySeconds: 3
             periodSeconds: 3
-          readinessProbe:
-            httpGet:
-              path: /health/ready
-              port: 10000
+        # My readiness will be determined by envoy, but you could have this for single container deployments
+        #          readinessProbe:
+        #            httpGet:
+        #              path: /health/ready
+        #              port: 8080
         - image: "envoy"
           name: "envoy"
           resources: {}

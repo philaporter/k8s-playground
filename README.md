@@ -12,23 +12,23 @@ spin up in k8s using minikube.
 
 - [x] Configure a deployment configuration that defines the sample application with the liveliness and readiness probes.
 
-- [x] Configure multi-container deployments. 
+- [x] Configure a multi-container deployment with envoy as the sidecar.
+
+- [x] Configure traffic to come through envoy with envoy health checks.
 
 - [ ] Configure non default container resources.
 
 - [ ] Create a db dependency in the sample application that will give me the opportunity to set up a db cluster in 
 k8s.
 
-TODO:
-
-- [ ] Fix the sidecar functionality so that the health checks come in through envoy.
-
 ### Running something
 
 ```shell script
 # Deploying the app in k8s 
 cd k8s\ setup/
-./deploy_probes.sh
+./deploy.sh
+# If you want to hit the endpoints through your browser
+kubectl port-forward <pod name> 10000:10000
 
 # Building / running the app in docker-compose
 cd spring-sample
