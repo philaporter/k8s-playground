@@ -28,3 +28,18 @@ kubectl get deployments
 #Delete a pod - surgically precise attack with fire
 kubectl delete pod pod-name-1234
 ```
+
+#### Helpful notes that I deleted in an earlier commit that I shouldn't have:
+In order to use a locally built image, jump through the following hoops:
+- Set the environment variables with eval $(minikube docker-env)
+- Build the image with the Docker daemon of Minikube (eg docker build -t my-image .)
+- Set the image in the pod spec like the build tag (eg my-image)
+- Set the imagePullPolicy to Never, otherwise Kubernetes will try to download the image.
+Important note: You have to run eval $(minikube docker-env) on each terminal you want to use, since it only sets the
+environment variables for the current shell session.
+
+In order to create the base yaml to modify, do the following:
+```shell script
+kubectl create deployment first-k8s-deploy --image="sample" -o yaml --dry-run > sample.yml
+```
+then manually edit sample.yml to have the updated imagePullPolicy

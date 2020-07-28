@@ -1,5 +1,5 @@
 #!/bin/bash
-# create deployment for the spring sample and it's envoy sidecar
+# create deployment for the spring sample and its envoy sidecar
 eval $(minikube docker-env)
 docker build -t sample ../spring-sample/.
 docker build -t envoy ../envoy/.
